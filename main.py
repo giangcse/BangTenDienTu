@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
         self.logo.setLineWidth(0)
         self.logo.setText("")
         self.logo.setTextFormat(QtCore.Qt.AutoText)
-        self.logo.setPixmap(QtGui.QPixmap("qh.png"))
+        self.logo.setPixmap(QtGui.QPixmap(""))
         self.logo.setScaledContents(False)
         self.logo.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
         self.logo.setObjectName("logo")
@@ -86,15 +86,13 @@ class Ui_MainWindow(object):
         MainWindow.setWindowFlags(MainWindow.windowFlags() | Qt.FramelessWindowHint)
         # Phóng to cửa sổ
         MainWindow.showFullScreen()
-        self.dong_1.setText(_translate("MainWindow", "Đồng chí"))
-        self.dong_2.setText(_translate("MainWindow", "PHAN THANH GIẢNG"))
-        self.dong_3.setText(_translate("MainWindow", "ỦY VIÊN BỘ CHÍNH TRỊ, CHỦ TỊCH NƯỚC"))
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+        
+# Run PyQt5 UI
+# if __name__=='__main__':
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     MainWindow = QtWidgets.QMainWindow()
+#     ui = Ui_MainWindow()
+#     ui.setupUi(MainWindow)
+#     MainWindow.show()
+#     sys.exit(app.exec_())

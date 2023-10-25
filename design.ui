@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1248</width>
+    <width>1395</width>
     <height>736</height>
    </rect>
   </property>
@@ -98,6 +98,7 @@ color: rgb(255, 0, 0);</string>
         <pointsize>100</pointsize>
         <weight>75</weight>
         <bold>true</bold>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="styleSheet">
@@ -106,6 +107,9 @@ color: rgb(255, 0, 0);</string>
       </property>
       <property name="text">
        <string>PHAN THANH GIẢNG</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

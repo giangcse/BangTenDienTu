@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "e2a85069-89b5-4eb9-a6dd-fe2b47ef1733",
+		"name": "Bang Ten Dien Tu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25051016",
+		"_collection_link": "https://universal-spaceship-740880.postman.co/workspace/My-Workspace~91a377e7-4a36-4d2b-81f3-6f7720806da3/collection/25051016-e2a85069-89b5-4eb9-a6dd-fe2b47ef1733?action=share&source=collection_link&creator=25051016"
+	},
+	"item": [
+		{
+			"name": "Nội dung hiển thị",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"background\": {\r\n        \"path\": \"bangten.png\"\r\n    },\r\n    \"logo\": {\r\n        \"path\": \"bca.png\"\r\n    },\r\n    \"dong_1\": {\r\n        \"text\": \"ĐỒNG CHÍ\",\r\n        \"color\": \"rgb(255, 0, 40)\",\r\n        \"background\": \"transparent\"\r\n        },\r\n    \"dong_2\": {\r\n        \"text\": \"PHAN THANH GIẢNG\",\r\n        \"color\": \"rgb(255, 0, 40)\",\r\n        \"background\": \"transparent\"\r\n        },\r\n    \"dong_3\": {\r\n        \"text\": \"BÍ THƯ ĐẢNG ỦY XÃ LONG PHÚ\",\r\n        \"color\": \"rgb(255, 0, 40)\",\r\n        \"background\": \"transparent\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8888/update_text",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"update_text"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload hình ảnh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/lusap/Downloads/ultrawide-blue-space-wallpaper-efe5324c1e765c9bf55c98c2517124e4.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8888/upload",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
