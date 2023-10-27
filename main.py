@@ -63,4 +63,4 @@ def update_ui(config):
 if __name__ == "__main__":
     from uvicorn import run
 
-    run(fastapi_app, host="0.0.0.0", port=8008)
+    run(fastapi_app, host="0.0.0.0", port=9009)
