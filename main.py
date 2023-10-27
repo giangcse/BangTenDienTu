@@ -2,8 +2,10 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5 import QtGui
 from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
-
+from design import Ui_MainWindow
+import sys
 import shutil
+import threading
 
 # Tạo một ứng dụng FastAPI
 fastapi_app = FastAPI()
@@ -27,6 +29,18 @@ async def upload(file: UploadFile = File(...)):
 async def update_text(text_content: TextContent):
     config = dict(text_content)
 
+    update = threading.Thread(target=update_ui, args=(config, ))
+    update.daemon = True
+    update.start()
+    return {"message": "Nội dung đã được cập nhật"}
+
+def update_ui(config):
+    # Tạo ứng dụng PyQt5
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+
     MainWindow.setStyleSheet(f"background-image: url({config['background']['path']});")
     ui.logo.setPixmap(QtGui.QPixmap(config['logo']['path']))
 
@@ -43,19 +57,10 @@ async def update_text(text_content: TextContent):
     ui.dong_1.repaint()
     ui.dong_2.repaint()
     ui.dong_3.repaint()
-    return {"message": "Nội dung đã được cập nhật"}
+    MainWindow.show()
+    sys.exit(app.exec_())
 
 if __name__ == "__main__":
-    import sys
-    from design import Ui_MainWindow  # Thay your_ui_module bằng tên tệp UI của bạn
-
-    # Tạo ứng dụng PyQt5
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-
     from uvicorn import run
 
     run(fastapi_app, host="0.0.0.0", port=8008)
